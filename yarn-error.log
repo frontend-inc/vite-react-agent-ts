@@ -1,0 +1,63 @@
+Arguments: 
+  /Users/rami/.nvm/versions/node/v22.14.0/bin/node /usr/local/Cellar/yarn/1.22.19/libexec/bin/yarn.js install
+
+PATH: 
+  /Users/rami/.antigravity/antigravity/bin:/Users/rami/.opencode/bin:/Users/rami/.bun/bin:/opt/homebrew/bin:/Users/rami/.local/bin:/Users/rami/.local/bin:/Users/rami/miniconda3/bin:/Users/rami/.nvm/versions/node/v22.14.0/bin:/usr/local/opt/openssl@1.1/bin:/opt/local/bin:/Applications/:/Applications/Postgres.app/Contents/Versions/12/bin:/Users/rami/.rbenv/shims:/opt/homebrew/opt/python@3.9/libexec/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/opt/homebrew/bin:/Applications/iTerm.app/Contents/Resources/utilities
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  22.14.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@types%2freact-markdown: Not found
+      at params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:66145:18)
+      at self.callback (/usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:140890:22)
+      at Request.emit (node:events:518:28)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:141862:10)
+      at Request.emit (node:events:518:28)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:632:28)
+      at IncomingMessage.emit (node:events:530:35)
+      at endReadableNT (node:internal/streams/readable:1698:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+npm manifest: 
+  {
+    "name": "vite-app",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+      "dev": "vite",
+      "build": "tsc && vite build",
+      "preview": "vite preview"
+    },
+    "dependencies": {
+      "react": "^19.1.1",
+      "react-dom": "^19.1.1",
+      "react-router-dom": "^7.9.1",
+      "lucide-react": "^0.544.0",
+      "clsx": "^2.1.1",
+      "@supabase/supabase-js": "latest",
+      "react-markdown": "latest"
+    },
+    "devDependencies": {
+      "@types/react": "^19.0.0",
+      "@types/react-dom": "^19.0.0",
+      "@vitejs/plugin-react": "^5.0.3",
+      "typescript": "^4.9.3",
+      "vite": "^7.1.6",
+      "@types/react-markdown": "latest"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
