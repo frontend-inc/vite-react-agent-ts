@@ -6,9 +6,8 @@ import MessageHero from '@/components/MessageHero';
 import MessagesList from '@/components/MessagesList';
 import MessageInput from '@/components/MessageInput';
 
-const API_BASE = import.meta.env.VITE_API_URL;
-const CHAT_ENDPOINT = `${API_BASE}/api/v1/chat`;
-const CHATS_ENDPOINT = `${API_BASE}/api/v1/chats`;
+const CHAT_ENDPOINT = '/api/v1/chat';
+const CHATS_ENDPOINT = '/api/v1/chats';
 const STORAGE_ENDPOINT = '/api/v1/storage';
 
 interface Chat {
