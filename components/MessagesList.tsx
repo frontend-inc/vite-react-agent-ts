@@ -30,10 +30,16 @@ const getToolDisplayText = (
       if (isCompleted) return 'Page scraped';
       break;
 
-    case 'generate_images':
-      if (isStarted) return 'Preparing to generate images...';
-      if (isInputAvailable) return 'Generating images...';
-      if (isCompleted) return 'Images generated';
+    case 'create_images':
+      if (isStarted) return 'Preparing to create images...';
+      if (isInputAvailable) return 'Creating images...';
+      if (isCompleted) return 'Images created';
+      break;
+
+    case 'edit_image':
+      if (isStarted) return 'Preparing to edit image...';
+      if (isInputAvailable) return 'Editing image...';
+      if (isCompleted) return 'Image edited';
       break;
 
     case 'shopify_fetch_products':
