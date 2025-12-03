@@ -65,11 +65,11 @@ const Markdown: React.FC<MarkdownProps> = ({ content, className = '' }) => {
     sections.forEach((section) => {
       if (section.type === 'image') {
         elements.push(
-          <div key={`img-${elementKey++}`} className="my-3 flex justify-center">
+          <div key={`img-${elementKey++}`} className="my-3">
             <img
               src={section.content}
               alt={section.alt || 'Image'}
-              className="max-w-full h-auto rounded-lg shadow-md border border-gray-200"
+              className="h-32 w-32 aspect-square rounded-md object-fit"
             />
           </div>
         );

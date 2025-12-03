@@ -189,13 +189,16 @@ const Agent: React.FC<AgentProps> = ({ chatId }) => {
         setIsCreatingChat(true);
 
         // Build message parts
-        const parts: Array<{ type: string; text?: string; url?: string }> = [{ type: 'text', text: messageToSend }];
+        const parts: Array<{ type: string; text?: string; url?: string }> = [];
         if (imageToSend) {
+          // Add image as markdown in a text part
+          parts.push({ type: 'text', text: `![Image](${imageToSend})` });
           parts.push({
             type: 'file',
             url: imageToSend,
           });
         }
+        parts.push({ type: 'text', text: messageToSend });
 
         // Create chat without message
         const response = await createChat();
@@ -217,10 +220,13 @@ const Agent: React.FC<AgentProps> = ({ chatId }) => {
     }
 
     // Build message parts
-    const parts: Array<{ type: string; text?: string; url?: string }> = [{ type: 'text', text: messageToSend }];
+    const parts: Array<{ type: string; text?: string; url?: string }> = [];
     if (imageToSend) {
+      // Add image as markdown in a text part
+      parts.push({ type: 'text', text: `![Image](${imageToSend})` });
       parts.push({ type: 'file', url: imageToSend });
     }
+    parts.push({ type: 'text', text: messageToSend });
 
     await sendMessage({
       role: 'user',

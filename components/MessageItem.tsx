@@ -1,5 +1,5 @@
 import React from 'react';
-import { Message, FilePart } from '@/lib/hooks/use-chat';
+import { Message } from '@/lib/hooks/use-chat';
 import MessageParts from './MessageParts';
 import { cn } from '@/lib/utils';
 
@@ -60,28 +60,12 @@ const MessageItem: React.FC<MessageItemProps> = ({ message, isLoading }) => {
           </>
         ) : (
           <>
-            {/* User message - render parts */}
-            {message.parts.map((part, index) => {
-              if (part.type === 'text') {
-                return (
-                  <p key={index} className="text-sm leading-relaxed whitespace-pre-wrap break-words text-white">
-                    {part.text}
-                  </p>
-                );
-              }
-              if (part.type === 'file') {
-                return (
-                  <div key={index} className="mb-2">
-                    <img
-                      src={(part as FilePart).url}
-                      alt="Uploaded"
-                      className="rounded-lg w-full max-w-xs object-cover max-h-48 border border-white/30"
-                    />
-                  </div>
-                );
-              }
-              return null;
-            })}
+            {/* User message - render only text and reasoning parts */}
+            {message.parts
+              .filter((part) => part.type === 'text' || part.type === 'reasoning')
+              .map((part, index) => (
+                <MessageParts key={index} part={part} />
+              ))}
             {/* Timestamp */}
             <p className="text-xs mt-2 text-white/70">
               {new Date(message.timestamp).toLocaleTimeString([], {
